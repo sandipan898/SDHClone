@@ -36,11 +36,15 @@ public class UserController {
         return userService.createUser(userModel);
     }
 
-
+    @PutMapping("/{userId}")
+    public HashMap<String, String> update(@PathVariable String userId, @RequestBody final UserModel userModel) {
+        logger.info("Accessing update() -> PUT : api/v1/user/{userId}");
+        return userService.updateUser(userId, userModel);
+    }
 
     @DeleteMapping("/{userId}")
     public HashMap<String, String> delete(@PathVariable String userId) {
-        logger.info("Accessing delete() -> DELETE : api/v1/user/");
+        logger.info("Accessing delete() -> DELETE : api/v1/user/{userId}");
         return userService.deleteUser(userId);
     }
 }

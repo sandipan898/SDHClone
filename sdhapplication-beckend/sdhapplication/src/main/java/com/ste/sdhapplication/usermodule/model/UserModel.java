@@ -10,12 +10,12 @@ import org.springframework.lang.NonNull;
 @Setter
 @ToString
 @Entity
-@Table(name = "User")
+@Table(name = "Sdhuser")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @NonNull
-    private String userId;
+    private String id;
     @NonNull
     private String username;
     @NonNull

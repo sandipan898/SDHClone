@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
             UserModel createdUser = userRepository.saveAndFlush(userModel);
             createUserMap.put("Status", "OK");
             createUserMap.put("Message", "User Created Successfully!");
-            createUserMap.put("UserId", createdUser.getUserId());
+            createUserMap.put("UserId", createdUser.getId());
             createUserMap.put("Error", null);
         } catch (Exception e) {
             createUserMap.put("Status", "KO");
@@ -46,8 +46,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public HashMap<String, String> updateUser(String userId, UserModel userModel) {
         var updateUserMap = new HashMap<String, String>();
-        userModel.setUserId(userId);
+        userModel.setId(userId);
         try {
+            if(userRepository.findById(userId).isEmpty())
+                throw new Exception("Given user Id does not exist!");
             UserModel createdUser = userRepository.saveAndFlush(userModel);
             updateUserMap.put("Status", "OK");
             updateUserMap.put("Message", "User Updated Successfully!");
@@ -62,10 +64,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public HashMap<String, String> deleteUser(String id) {
+    public HashMap<String, String> deleteUser(String userId) {
         var deleteUserMap = new HashMap<String, String>();
         try {
-            userRepository.deleteById(id);
+            if(userRepository.findById(userId).isEmpty())
+                throw new Exception("Given user Id does not exist!");
+            userRepository.deleteById(userId);
             deleteUserMap.put("Status", "OK");
             deleteUserMap.put("Message", "User Deleted Successfully!");
             deleteUserMap.put("Error", null);
