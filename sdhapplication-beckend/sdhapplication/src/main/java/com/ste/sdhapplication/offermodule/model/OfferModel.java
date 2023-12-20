@@ -1,5 +1,6 @@
 package com.ste.sdhapplication.offermodule.model;
 
+import com.ste.sdhapplication.carmodule.model.CarModel;
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,12 +15,13 @@ import org.springframework.lang.NonNull;
 @Table(name = "offer")
 public class OfferModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NonNull
-    private long offerID;
+    private Long offerID;
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private UserModel user;
+    @ManyToOne
+    private CarModel car;
     private String color;
     private String trim;
     private String option;
