@@ -1,6 +1,6 @@
 package com.ste.sdhapplication.offermodule.model;
 
-import com.ste.sdhapplication.carmodule.model.CarModel;
+import com.ste.sdhapplication.vehiclemodule.model.VersionModel;
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,7 +21,7 @@ public class OfferModel {
     @ManyToOne
     private UserModel user;
     @ManyToOne
-    private CarModel car;
+    private VersionModel car;
     private String color;
     private String trim;
     private String option;
