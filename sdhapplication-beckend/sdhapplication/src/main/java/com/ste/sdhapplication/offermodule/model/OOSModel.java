@@ -19,7 +19,7 @@ public class OOSModel {
     private Long OosID;
     @ManyToOne
     private OfferModel offer;
-    @NonNull
+    @Column(nullable = false)
     private String type;
     private String category;
     private String attribute;

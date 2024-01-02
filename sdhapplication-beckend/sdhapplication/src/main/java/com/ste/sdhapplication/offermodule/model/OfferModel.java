@@ -16,7 +16,7 @@ import org.springframework.lang.NonNull;
 public class OfferModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NonNull
+    @Column(nullable = false)
     private Long offerID;
     @ManyToOne
     private UserModel user;
