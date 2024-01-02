@@ -2,7 +2,6 @@ package com.ste.sdhapplication.usermodule.service;
 
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import com.ste.sdhapplication.usermodule.repository.UserRepository;
-import org.hibernate.resource.transaction.backend.jta.internal.synchronization.ExceptionMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -80,5 +79,23 @@ public class UserServiceImpl implements UserService {
             deleteUserMap.put("Error", e.getMessage());
         }
         return deleteUserMap;
+    }
+
+    @Override
+    public HashMap<String, String> loginUser(String username, String password) {
+        var loginUserMap = new HashMap<String, String>();
+        try {
+            if(userRepository.findByUsernameAndPassword(username, password).isEmpty())
+                throw new Exception("Incorrect Credential!");
+            loginUserMap.put("Status", "OK");
+            loginUserMap.put("Message", "User LoggedIn Successfully!");
+            loginUserMap.put("Error", null);
+        } catch (Exception e) {
+            loginUserMap.put("Status", "KO");
+            loginUserMap.put("Message", "Unsuccessful login!");
+            loginUserMap.put("UserId", null);
+            loginUserMap.put("Error", e.getMessage());
+        }
+        return loginUserMap;
     }
 }

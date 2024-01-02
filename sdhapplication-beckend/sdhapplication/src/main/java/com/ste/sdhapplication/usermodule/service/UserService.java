@@ -11,4 +11,5 @@ public interface UserService {
     HashMap<String, String> createUser(UserModel userModel);
     HashMap<String, String> updateUser(String id, UserModel userModel);
     HashMap<String, String> deleteUser(String id);
+    HashMap<String, String> loginUser(String username, String password);
 }

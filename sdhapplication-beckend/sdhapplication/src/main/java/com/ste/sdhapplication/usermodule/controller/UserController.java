@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,6 +29,12 @@ public class UserController {
     public UserModel getById(@PathVariable String userId) {
         logger.info("Accessing getById() -> GET : api/v1/user/{userId}");
         return userService.getUserById(userId);
+    }
+
+    @GetMapping("/login")
+    public HashMap<String, String> login(@RequestParam("username") String username, @RequestParam("password") String password) {
+        logger.info("Accessing getById() -> GET : api/v1/user/login");
+        return userService.loginUser(username, password);
     }
 
     @PostMapping("/")

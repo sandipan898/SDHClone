@@ -6,6 +6,8 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.lang.NonNull;
 
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
@@ -14,13 +16,13 @@ import org.springframework.lang.NonNull;
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @NonNull
     private String id;
-    @NonNull
+    @Column(unique = true, nullable = false)
     private String username;
-    @NonNull
+    @Column(unique = true, nullable = false)
     private String password;
     private String dealerId;
     private String loginTime;
-    private String role;
+    private String loggedInRole;
+    private List<String> allowedRoles;
 }
