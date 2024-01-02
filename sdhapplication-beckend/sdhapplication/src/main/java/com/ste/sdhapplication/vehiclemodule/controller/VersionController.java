@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/car")
+@RequestMapping("api/v1/version")
 public class VersionController {
     @Autowired
     private VersionService versionService;
@@ -31,7 +31,7 @@ public class VersionController {
         return versionService.getCarByVersionCode(versionCode);
     }
 
-    @GetMapping("/family/{familyCode}")
+    @GetMapping("/by_family/{familyCode}")
     public List<VersionModel> getByFamilyCode(@PathVariable String familyCode) {
         logger.info("Accessing getByFamilyCode() -> GET : api/v1/car/family/{familyCode}");
         return versionService.getAllCarsByFamily(familyCode);

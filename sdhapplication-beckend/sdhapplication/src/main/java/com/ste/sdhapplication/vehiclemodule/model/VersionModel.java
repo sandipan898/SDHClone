@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "version")
 public class VersionModel {
     @Id
-    @NonNull
+    @Column(unique = true, nullable = false)
     private String code;
     @ManyToOne
     private FamilyModel family;

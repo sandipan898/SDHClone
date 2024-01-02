@@ -32,7 +32,7 @@ public class VersionServiceImpl implements VersionService {
     public HashMap<String, String> createCar(VersionModel versionModel) {
         var createCarMap = new HashMap<String, String>();
         try {
-            if(versionRepository.findById(versionModel.getCode()).isEmpty())
+            if(versionRepository.findById(versionModel.getCode()).isPresent())
                 throw new Exception("Car with the given Version Code already exists!");
             VersionModel createdCar = versionRepository.saveAndFlush(versionModel);
             createCarMap.put("Status", "OK");

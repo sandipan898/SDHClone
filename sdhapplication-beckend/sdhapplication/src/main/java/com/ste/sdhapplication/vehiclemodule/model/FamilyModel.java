@@ -1,10 +1,7 @@
 package com.ste.sdhapplication.vehiclemodule.model;
 
 import com.ste.sdhapplication.usermodule.model.UserModel;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -19,7 +16,7 @@ import java.util.List;
 @Table(name = "Family")
 public class FamilyModel {
     @Id
-    @NonNull
+    @Column(unique = true, nullable = false)
     private String code;
     @ManyToOne
     private UserModel userCre;
