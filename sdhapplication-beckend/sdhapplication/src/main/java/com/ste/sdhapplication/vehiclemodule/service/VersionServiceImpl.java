@@ -58,12 +58,10 @@ public class VersionServiceImpl implements VersionService {
             VersionModel createdCar = versionRepository.saveAndFlush(versionModel);
             updateCarMap.put("Status", "OK");
             updateCarMap.put("Message", "Car Updated Successfully!");
-            updateCarMap.put("versionCode", createdCar.getCode());
             updateCarMap.put("Error", null);
         } catch (Exception e) {
             updateCarMap.put("Status", "KO");
             updateCarMap.put("Message", "Error Updating Car!");
-            updateCarMap.put("versionCode", null);
             updateCarMap.put("Error", e.getMessage());
         }
         return updateCarMap;

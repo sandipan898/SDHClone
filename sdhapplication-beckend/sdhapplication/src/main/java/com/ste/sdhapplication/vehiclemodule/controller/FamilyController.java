@@ -18,7 +18,7 @@ public class FamilyController {
     @Autowired
     private FamilyServiceImpl familyServiceImpl;
 
-    Logger logger = LoggerFactory.getLogger(UserController.class);
+    Logger logger = LoggerFactory.getLogger(FamilyController.class);
 
     @GetMapping("/")
     public List<FamilyModel> list() {

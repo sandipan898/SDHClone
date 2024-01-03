@@ -17,7 +17,7 @@ public class VersionController {
     @Autowired
     private VersionService versionService;
 
-    Logger logger = LoggerFactory.getLogger(UserController.class);
+    Logger logger = LoggerFactory.getLogger(VersionController.class);
 
     @GetMapping("/")
     public List<VersionModel> list() {

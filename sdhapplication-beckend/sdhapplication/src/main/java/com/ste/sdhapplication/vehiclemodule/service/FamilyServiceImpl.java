@@ -39,12 +39,12 @@ public class FamilyServiceImpl implements FamilyService {
             FamilyModel createdFamily = familyRepository.saveAndFlush(familyModel);
             createFamilyMap.put("Status", "OK");
             createFamilyMap.put("Message", "Family Created Successfully!");
-            createFamilyMap.put("VersionCode", createdFamily.getCode());
+            createFamilyMap.put("FamilyCode", createdFamily.getCode());
             createFamilyMap.put("Error", null);
         } catch (Exception e) {
             createFamilyMap.put("Status", "KO");
             createFamilyMap.put("Message", "Error Creating Family!");
-            createFamilyMap.put("versionCode", null);
+            createFamilyMap.put("FamilyCode", null);
             createFamilyMap.put("Error", e.getMessage());
         }
         return createFamilyMap;
@@ -60,12 +60,10 @@ public class FamilyServiceImpl implements FamilyService {
             FamilyModel createdFamily = familyRepository.saveAndFlush(familyModel);
             updateFamilyMap.put("Status", "OK");
             updateFamilyMap.put("Message", "Family Updated Successfully!");
-            updateFamilyMap.put("familyCode", createdFamily.getCode());
             updateFamilyMap.put("Error", null);
         } catch (Exception e) {
             updateFamilyMap.put("Status", "KO");
             updateFamilyMap.put("Message", "Error Updating Family!");
-            updateFamilyMap.put("familyCode", null);
             updateFamilyMap.put("Error", e.getMessage());
         }
         return updateFamilyMap;
