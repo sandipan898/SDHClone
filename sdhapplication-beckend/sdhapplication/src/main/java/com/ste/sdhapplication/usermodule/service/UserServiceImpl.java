@@ -28,6 +28,8 @@ public class UserServiceImpl implements UserService {
     public HashMap<String, String> createUser(UserModel userModel) {
         var createUserMap = new HashMap<String, String>();
         try {
+            if(userRepository.findById(userModel.getId()).isPresent())
+                throw new Exception("User with the given Id already exists!");
             UserModel createdUser = userRepository.saveAndFlush(userModel);
             createUserMap.put("Status", "OK");
             createUserMap.put("Message", "User Created Successfully!");
@@ -49,14 +51,13 @@ public class UserServiceImpl implements UserService {
         try {
             if(userRepository.findById(userId).isEmpty())
                 throw new Exception("Given user Id does not exist!");
-            UserModel createdUser = userRepository.saveAndFlush(userModel);
+            userRepository.saveAndFlush(userModel);
             updateUserMap.put("Status", "OK");
             updateUserMap.put("Message", "User Updated Successfully!");
             updateUserMap.put("Error", null);
         } catch (Exception e) {
             updateUserMap.put("Status", "KO");
             updateUserMap.put("Message", "Error Updating User!");
-            updateUserMap.put("UserId", null);
             updateUserMap.put("Error", e.getMessage());
         }
         return updateUserMap;
