@@ -56,13 +56,11 @@ public class OfferServiceImpl implements OfferService {
                 throw new Exception("Given offer Id does not exist!");
             OfferModel createdOffer = offerRepository.saveAndFlush(offerModel);
             updateOfferMap.put("Status", "OK");
-            updateOfferMap.put("OfferId", createdOffer.getOfferID().toString());
             updateOfferMap.put("Message", "Offer Updated Successfully!");
             updateOfferMap.put("Error", null);
         } catch (Exception e) {
             updateOfferMap.put("Status", "KO");
             updateOfferMap.put("Message", "Error Updating Offer!");
-            updateOfferMap.put("OfferId", null);
             updateOfferMap.put("Error", e.getMessage());
         }
         return updateOfferMap;

@@ -1,12 +1,12 @@
 package com.ste.sdhapplication.offermodule.model;
 
+import com.ste.sdhapplication.clientmodule.module.ClientModel;
 import com.ste.sdhapplication.vehiclemodule.model.VersionModel;
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.lang.NonNull;
 
 @Getter
 @Setter
@@ -22,6 +22,8 @@ public class OfferModel {
     private UserModel user;
     @ManyToOne
     private VersionModel car;
+    @ManyToOne
+    private ClientModel client;
     private String color;
     private String trim;
     private String option;

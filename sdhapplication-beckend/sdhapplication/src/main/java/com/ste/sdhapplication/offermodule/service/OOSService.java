@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface OOSService {
     List<OOSModel> getOOSByOffer(Long offerId);
+    HashMap<String, String> createOOS(OOSModel oosModel);
 }

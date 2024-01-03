@@ -18,7 +18,7 @@ public class OfferController {
     @Autowired
     private OfferService offerService;
 
-    Logger logger = LoggerFactory.getLogger(UserController.class);
+    Logger logger = LoggerFactory.getLogger(OfferController.class);
 
     @GetMapping("/")
     public List<OfferModel> list() {
