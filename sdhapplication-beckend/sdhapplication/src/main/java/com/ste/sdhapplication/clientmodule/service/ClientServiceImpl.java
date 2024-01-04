@@ -2,7 +2,6 @@ package com.ste.sdhapplication.clientmodule.service;
 
 import com.ste.sdhapplication.clientmodule.module.ClientModel;
 import com.ste.sdhapplication.clientmodule.repository.ClientRepository;
-import com.ste.sdhapplication.parmodule.model.ParModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

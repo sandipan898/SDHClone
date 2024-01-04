@@ -2,9 +2,6 @@ package com.ste.sdhapplication.clientmodule.controller;
 
 import com.ste.sdhapplication.clientmodule.module.ClientModel;
 import com.ste.sdhapplication.clientmodule.service.ClientService;
-import com.ste.sdhapplication.parmodule.model.ParModel;
-import com.ste.sdhapplication.parmodule.service.ParService;
-import com.ste.sdhapplication.usermodule.controller.UserController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
