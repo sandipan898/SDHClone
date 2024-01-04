@@ -21,7 +21,7 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public List<OfferModel> getAllOffersByUser(String userId) {
-        return offerRepository.findAllOffersByUser_id(userId);
+        return offerRepository.findByUser_id(userId);
     }
 
     @Override

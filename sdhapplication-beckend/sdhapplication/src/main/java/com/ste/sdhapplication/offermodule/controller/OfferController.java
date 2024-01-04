@@ -32,9 +32,9 @@ public class OfferController {
         return offerService.getOfferById(offerId);
     }
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/by_user/{userId}")
     public List<OfferModel> getByUserId(@PathVariable String userId) {
-        logger.info("Accessing getByUserId() -> GET : api/v1/offer/user/{userId}");
+        logger.info("Accessing getByUserId() -> GET : api/v1/offer/by_user/{userId}");
         return offerService.getAllOffersByUser(userId);
     }
 

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface OOSRepository extends JpaRepository<OOSModel, Long> {
-    List<OOSModel> findByOffer_offerId(Long offerId);
+    List<OOSModel> findByOffer_offerID(Long offerId);
 }

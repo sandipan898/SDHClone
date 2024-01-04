@@ -16,7 +16,7 @@ public class OOSServiceImpl implements OOSService {
 
     @Override
     public List<OOSModel> getOOSByOffer(Long offerId) {
-        return oosRepository.findByOffer_offerId(offerId);
+        return oosRepository.findByOffer_offerID(offerId);
     }
 
     @Override
