@@ -3,6 +3,7 @@ package com.ste.sdhapplication.contractmodule.controller;
 import com.ste.sdhapplication.contractmodule.model.ContractModel;
 import com.ste.sdhapplication.contractmodule.service.ContractService;
 import com.ste.sdhapplication.offermodule.controller.OfferController;
+import com.ste.sdhapplication.ordermodule.model.OrderModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class ContractController {
     @Autowired
     private ContractService contractService;
 
-    Logger logger = LoggerFactory.getLogger(OfferController.class);
+    Logger logger = LoggerFactory.getLogger(ContractService.class);
 
     @GetMapping("/")
     public List<ContractModel> list() {
@@ -36,6 +37,12 @@ public class ContractController {
     public List<ContractModel> getByUserId(@PathVariable String userId) {
         logger.info("Accessing getByUserId() -> GET : api/v1/contract/by_user/{userId}");
         return contractService.getAllContractsByUser(userId);
+    }
+
+    @GetMapping("/by_client/{clientId}")
+    public List<OrderModel> getByClientId(@PathVariable long clientId) {
+        logger.info("Accessing getByClientId() -> GET : api/v1/contract/by_client/{clientId}");
+        return contractService.getAllContractsByClient(clientId);
     }
 
     @PostMapping("/")

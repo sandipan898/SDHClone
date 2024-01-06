@@ -3,6 +3,7 @@ package com.ste.sdhapplication.contractmodule.service;
 import com.ste.sdhapplication.contractmodule.model.ContractModel;
 import com.ste.sdhapplication.contractmodule.repository.ContractRepository;
 import com.ste.sdhapplication.offermodule.model.OfferModel;
+import com.ste.sdhapplication.ordermodule.model.OrderModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,11 @@ public class ContractServiceImpl implements ContractService {
     @Override
     public ContractModel getContractById(long contractId) {
         return contractRepository.findById(contractId).orElse(null);
+    }
+
+    @Override
+    public List<OrderModel> getAllContractsByClient(long clientId) {
+        return contractRepository.findByClient_clientId(clientId);
     }
 
     @Override

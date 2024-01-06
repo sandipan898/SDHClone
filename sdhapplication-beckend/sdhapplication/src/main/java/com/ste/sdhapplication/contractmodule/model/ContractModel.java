@@ -13,6 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @Entity
+@Table(name = "contract")
 public class ContractModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
