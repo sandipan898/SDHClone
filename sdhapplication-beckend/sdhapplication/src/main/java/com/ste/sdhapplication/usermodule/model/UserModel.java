@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 @Entity
-@Table(name = "Sdhuser")
+@Table(name = "SdhUser")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -22,6 +22,7 @@ public class UserModel {
     @Column(unique = true, nullable = false)
     private String password;
     private String dealerId;
+    private String creMode;
     private String loginTime;
     private String loggedInRole;
     private List<String> allowedRoles;
