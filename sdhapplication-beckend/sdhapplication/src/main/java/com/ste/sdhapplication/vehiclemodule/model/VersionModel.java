@@ -22,6 +22,7 @@ public class VersionModel {
     private FamilyModel family;
     @ManyToOne
     private UserModel userCre;
+    private String carType;
     private List<String> optionList;
     private List<String> colorList;
     private List<String> trimList;

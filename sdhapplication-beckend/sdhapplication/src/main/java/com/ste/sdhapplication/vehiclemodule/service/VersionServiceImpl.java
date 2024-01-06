@@ -29,6 +29,11 @@ public class VersionServiceImpl implements VersionService {
     }
 
     @Override
+    public List<VersionModel> getAllVersionsByType(String carType) {
+        return versionRepository.findByCarType(carType);
+    }
+
+    @Override
     public HashMap<String, String> createCar(VersionModel versionModel) {
         var createCarMap = new HashMap<String, String>();
         try {

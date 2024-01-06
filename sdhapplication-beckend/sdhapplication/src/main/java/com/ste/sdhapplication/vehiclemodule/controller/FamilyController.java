@@ -34,7 +34,7 @@ public class FamilyController {
 
     @GetMapping("/by_dealer/{dealerId}")
     public List<FamilyModel> getByDealerId(@PathVariable String dealerId) {
-        logger.info("Accessing getByFamilyCode() -> GET : api/v1/car/family/by_dealer/{dealerId}");
+        logger.info("Accessing getByDealerId() -> GET : api/v1/car/family/by_dealer/{dealerId}");
         return familyServiceImpl.getFamilyByDealerId(dealerId);
     }
 

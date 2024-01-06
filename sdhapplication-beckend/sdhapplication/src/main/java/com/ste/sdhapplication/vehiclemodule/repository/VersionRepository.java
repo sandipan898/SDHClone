@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface VersionRepository extends JpaRepository<VersionModel, String> {
     List<VersionModel> findByFamily_code(String family);
+    List<VersionModel> findByCarType(String carType);
 }

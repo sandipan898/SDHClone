@@ -8,6 +8,7 @@ import java.util.List;
 public interface VersionService {
     List<VersionModel> getAllCars();
     List<VersionModel> getAllCarsByFamily(String familyId);
+    List<VersionModel> getAllVersionsByType(String carType);
     VersionModel getCarByVersionCode(String versionCode);
     HashMap<String, String> createCar(VersionModel versionModel);
     HashMap<String, String> updateCar(String versionCode, VersionModel VersionModel);

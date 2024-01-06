@@ -33,8 +33,14 @@ public class VersionController {
 
     @GetMapping("/by_family/{familyCode}")
     public List<VersionModel> getByFamilyCode(@PathVariable String familyCode) {
-        logger.info("Accessing getByFamilyCode() -> GET : api/v1/car/family/{familyCode}");
+        logger.info("Accessing getByFamilyCode() -> GET : api/v1/car/by_family/{familyCode}");
         return versionService.getAllCarsByFamily(familyCode);
+    }
+
+    @GetMapping("/by_type/{carType}")
+    public List<VersionModel> getByType(@PathVariable String carType) {
+        logger.info("Accessing getByType() -> GET : api/v1/car/by_type/{carType}");
+        return versionService.getAllVersionsByType(carType);
     }
 
     @PostMapping("/")
