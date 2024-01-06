@@ -25,6 +25,11 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
+    public List<OfferModel> getAllOffersByClient(long clientId) {
+        return offerRepository.findByClient_clientId(clientId);
+    }
+
+    @Override
     public OfferModel getOfferById(long offerId) {
         return offerRepository.findById(offerId).orElse(new OfferModel());
     }

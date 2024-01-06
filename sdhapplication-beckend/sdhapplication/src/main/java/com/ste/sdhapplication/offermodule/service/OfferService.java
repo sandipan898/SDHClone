@@ -9,6 +9,7 @@ import java.util.List;
 public interface OfferService {
     List<OfferModel> getAllOffers();
     List<OfferModel> getAllOffersByUser(String userId);
+    List<OfferModel> getAllOffersByClient(long clientId);
     OfferModel getOfferById(long offerId);
     HashMap<String, String> createOffer(OfferModel offerModel);
     HashMap<String, String> updateOffer(long offerId, OfferModel offerModel);

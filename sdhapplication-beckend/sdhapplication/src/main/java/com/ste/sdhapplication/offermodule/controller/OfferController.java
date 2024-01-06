@@ -2,6 +2,7 @@ package com.ste.sdhapplication.offermodule.controller;
 
 import com.ste.sdhapplication.offermodule.model.OfferModel;
 import com.ste.sdhapplication.offermodule.service.OfferService;
+import com.ste.sdhapplication.ordermodule.model.OrderModel;
 import com.ste.sdhapplication.usermodule.controller.UserController;
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import org.slf4j.Logger;
@@ -36,6 +37,12 @@ public class OfferController {
     public List<OfferModel> getByUserId(@PathVariable String userId) {
         logger.info("Accessing getByUserId() -> GET : api/v1/offer/by_user/{userId}");
         return offerService.getAllOffersByUser(userId);
+    }
+
+    @GetMapping("/by_client/{clientId}")
+    public List<OfferModel> getByClientId(@PathVariable long clientId) {
+        logger.info("Accessing getByClientId() -> GET : api/v1/offer/by_client/{clientId}");
+        return offerService.getAllOffersByClient(clientId);
     }
 
     @PostMapping("/")
