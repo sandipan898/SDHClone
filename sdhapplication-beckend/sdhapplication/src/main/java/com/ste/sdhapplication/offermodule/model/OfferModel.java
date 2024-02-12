@@ -1,6 +1,7 @@
 package com.ste.sdhapplication.offermodule.model;
 
 import com.ste.sdhapplication.clientmodule.module.ClientModel;
+import com.ste.sdhapplication.cremodule.model.CreModel;
 import com.ste.sdhapplication.vehiclemodule.model.VersionModel;
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import jakarta.persistence.*;
@@ -20,6 +21,8 @@ public class OfferModel {
     private Long offerID;
     @ManyToOne
     private UserModel user;
+    @ManyToOne
+    private CreModel cre;
     @ManyToOne
     private VersionModel car;
     @ManyToOne
