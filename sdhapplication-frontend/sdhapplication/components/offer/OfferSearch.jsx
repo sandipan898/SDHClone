@@ -1,9 +1,9 @@
-"use client"
+import React from 'react'
 
-const ClientSearch = ({ handleSearchSubmit, searchClicked, handleClearSearch }) => {
-    return (
-        <div className="md:m-5 sm:my-5">
-            <h1 className="mb-5 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Search Client</h1>
+const OfferSearch = ({ handleSearchSubmit, searchClicked, handleClearSearch }) => {
+  return (
+    <div className="md:m-5 sm:my-5">
+            <h1 className="mb-5 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Search Offer</h1>
             <form className="w-full mx-auto" onSubmit={handleSearchSubmit}>
                 <div className="md:flex md:flex-row md:justify-center sm:flex-col">
                     <div className="mx-5 w-full">
@@ -110,7 +110,7 @@ const ClientSearch = ({ handleSearchSubmit, searchClicked, handleClearSearch }) 
                 </div>
                 <div className="flex justify-center">
                     <button type="submit" className="inline-flex items-center justify-center mx-5 px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                        Get Clients
+                        Get Offers
                         <svg className="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                         </svg>
@@ -123,7 +123,7 @@ const ClientSearch = ({ handleSearchSubmit, searchClicked, handleClearSearch }) 
                 </div>
             </form>
         </div>
-    )
+  )
 }
 
-export default ClientSearch
+export default OfferSearch

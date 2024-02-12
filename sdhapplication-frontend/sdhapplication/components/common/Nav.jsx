@@ -44,19 +44,6 @@ const Nav = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="w-full md:block md:w-auto" id="navbar-menu1">
-                    <ul className="font-medium flex flex-row p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-dark md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-dark">
-                        <li>
-                            <Link href="#" className="block py-2 px-3 text-white rounded md:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">(nl | fr)</Link>
-                        </li>
-                        <li>
-                            <Link href="#" className="block py-2 px-3 text-white rounded md:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">dealercode</Link>
-                        </li>
-                        <li>
-                            <Link href="#" className="block py-2 px-3 text-white rounded md:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">logout</Link>
-                        </li>
-                    </ul>
-                </div>
                 <div className="w-full md:block md:w-auto" id="navbar-menu2">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-dark md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-dark">
                         <li>
@@ -73,6 +60,19 @@ const Nav = () => {
                         </li>
                         <li>
                             <Link href="#" className="block py-2 px-3 text-white rounded md:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">Contact</Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className="w-full md:block md:w-auto" id="navbar-menu1">
+                    <ul className="font-medium flex flex-row p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-dark md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-dark">
+                        <li>
+                            <Link href="#" className="block py-2 px-3 text-white rounded md:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">(nl | fr)</Link>
+                        </li>
+                        <li>
+                            <Link href="#" className="block py-2 px-3 text-white rounded md:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">dealercode</Link>
+                        </li>
+                        <li>
+                            <Link href="#" className="block py-2 px-3 text-white rounded md:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">logout</Link>
                         </li>
                     </ul>
                 </div>
