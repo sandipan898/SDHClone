@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/v1/client")
 public class ClientController {
     @Autowired
@@ -31,9 +32,15 @@ public class ClientController {
     }
 
     @GetMapping("/by_type/{type}")
-    public List<ClientModel> getByKey(@PathVariable String type) {
-        logger.info("Accessing getByKey() -> GET : api/v1/client/by_type/{type}");
+    public List<ClientModel> getByType(@PathVariable String type) {
+        logger.info("Accessing getByType() -> GET : api/v1/client/by_type/{type}");
         return clientService.getClientByType(type);
+    }
+
+    @GetMapping("/by_cre/{codCre}")
+    public List<ClientModel> getByCre(@PathVariable String codCre) {
+        logger.info("Accessing getByCre() -> GET : api/v1/client/by_cre/{codCre}");
+        return clientService.getClientsByCre(codCre);
     }
 
     @PostMapping("/")

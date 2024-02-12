@@ -1,5 +1,6 @@
 package com.ste.sdhapplication.clientmodule.module;
 
+import com.ste.sdhapplication.cremodule.model.CreModel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,4 +26,6 @@ public class ClientModel {
     private String telephone;
     private String address1;
     private String address2;
+    @ManyToOne
+    private CreModel cre;
 }

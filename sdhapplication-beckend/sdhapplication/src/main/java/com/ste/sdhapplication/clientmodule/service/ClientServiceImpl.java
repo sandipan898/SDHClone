@@ -25,15 +25,19 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findById(clientId).orElse(null);
     }
 
+    public List<ClientModel> getClientsByCre(String codCre) {
+        return clientRepository.findByCre_codCre(codCre);
+    }
+
     public HashMap<String, String> createClient(ClientModel clientModel) {
         var createClientMap = new HashMap<String, String>();
         try {
             if (clientRepository.findById(clientModel.getClientId()).isPresent())
                 throw new Exception("Client with given ID already exists!");
-            ClientModel createdPar = clientRepository.save(clientModel);
+            ClientModel createdClient = clientRepository.save(clientModel);
             createClientMap.put("Status", "OK");
             createClientMap.put("Message", "Client Created Successfully!");
-            createClientMap.put("clientId", createdPar.getClientId().toString());
+            createClientMap.put("clientId", createdClient.getClientId().toString());
             createClientMap.put("Error", null);
         } catch (Exception e) {
             createClientMap.put("Status", "KO");
