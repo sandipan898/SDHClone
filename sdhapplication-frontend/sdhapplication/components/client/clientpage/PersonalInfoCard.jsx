@@ -1,10 +1,11 @@
+"use client";
+
 import Link from 'next/link'
 import React from 'react'
 
-const ClientPage = ({ client }) => {
+const PersonalInfoCard = ({client}) => {
   return (
-    <div class="grid max-w-screen-xl grid-cols-1 gap-4 mx-auto sm:grid-cols-3 xl:grid-cols-6 sm:p-8">
-        <div class="col-span-3 p-6 bg-white border border-gray-300 rounded-lg shadow">
+    <div class="col-span-3 p-6 bg-white border border-gray-300 rounded-lg shadow">
         <h1 class="mb-4 pb-6 text-4xl text-center font-bold text-gray-900 md:text-4xl lg:text-3xl dark:text-white border-b border-gray-200">Personal Information</h1>
           <div class="relative overflow-x-auto">
             <table class="w-full text-lg text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -83,29 +84,7 @@ const ClientPage = ({ client }) => {
           </Link>
           </div>
         </div>
-
-        <div class="flex flex-col items-center justify-center">
-          <dt class="mb-2 text-3xl font-extrabold">100M+</dt>
-          <dd class="text-gray-500 dark:text-gray-400">Public repositories</dd>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-          <dt class="mb-2 text-3xl font-extrabold">1000s</dt>
-          <dd class="text-gray-500 dark:text-gray-400">Open source projects</dd>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-          <dt class="mb-2 text-3xl font-extrabold">1B+</dt>
-          <dd class="text-gray-500 dark:text-gray-400">Contributors</dd>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-          <dt class="mb-2 text-3xl font-extrabold">90+</dt>
-          <dd class="text-gray-500 dark:text-gray-400">Top Forbes companies</dd>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-          <dt class="mb-2 text-3xl font-extrabold">4M+</dt>
-          <dd class="text-gray-500 dark:text-gray-400">Organizations</dd>
-        </div>
-      </div>
   )
 }
 
-export default ClientPage
+export default PersonalInfoCard
