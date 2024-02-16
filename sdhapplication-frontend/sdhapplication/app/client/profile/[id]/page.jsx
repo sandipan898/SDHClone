@@ -1,6 +1,6 @@
 "use client";
 
-import ClientPage from '@components/client/ClientPage';
+import ClientPage from '@components/client/clientpage/ClientPage';
 import { getClientById } from '@services/ClientServices';
 import React, { useEffect, useState } from 'react'
 
