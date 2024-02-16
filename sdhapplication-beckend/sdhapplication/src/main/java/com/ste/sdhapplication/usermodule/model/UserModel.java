@@ -21,8 +21,6 @@ public class UserModel {
     private String username;
     @Column(unique = true, nullable = false)
     private String password;
-    private String dealerId;
-    private String creMode;
     private String loginTime;
     private String loggedInRole;
     private List<String> allowedRoles;
