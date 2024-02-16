@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/v1/family")
 public class FamilyController {
     @Autowired
@@ -36,6 +37,12 @@ public class FamilyController {
     public List<FamilyModel> getByDealerId(@PathVariable String dealerId) {
         logger.info("Accessing getByDealerId() -> GET : api/v1/car/family/by_dealer/{dealerId}");
         return familyServiceImpl.getFamilyByDealerId(dealerId);
+    }
+
+    @GetMapping("/by_user/{userId}")
+    public List<FamilyModel> getByUserId(@PathVariable String userId) {
+        logger.info("Accessing getByDealerId() -> GET : api/v1/car/family/by_dealer/{userId}");
+        return familyServiceImpl.getFamilyByUserId(userId);
     }
 
     @PostMapping("/")

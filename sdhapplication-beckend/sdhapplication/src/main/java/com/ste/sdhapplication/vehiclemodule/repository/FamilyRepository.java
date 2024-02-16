@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface FamilyRepository extends JpaRepository<FamilyModel, String> {
-    List<FamilyModel> findByUserCre_dealerId(String dealerId);
+    List<FamilyModel> findByUser_id(String dealerId);
+    List<FamilyModel> findByCre_codCre(String codCre);
 }

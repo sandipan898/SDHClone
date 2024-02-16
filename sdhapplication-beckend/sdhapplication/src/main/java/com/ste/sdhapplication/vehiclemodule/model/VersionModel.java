@@ -1,5 +1,6 @@
 package com.ste.sdhapplication.vehiclemodule.model;
 
+import com.ste.sdhapplication.cremodule.model.CreModel;
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,6 +23,8 @@ public class VersionModel {
     private FamilyModel family;
     @ManyToOne
     private UserModel userCre;
+    @ManyToOne
+    private CreModel cre;
     private String carType;
     private List<String> optionList;
     private List<String> colorList;

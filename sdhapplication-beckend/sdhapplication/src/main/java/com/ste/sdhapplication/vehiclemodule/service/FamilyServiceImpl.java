@@ -21,8 +21,13 @@ public class FamilyServiceImpl implements FamilyService {
     }
 
     @Override
+    public List<FamilyModel> getFamilyByUserId(String userId) {
+        return familyRepository.findByUser_id(userId);
+    }
+
+    @Override
     public List<FamilyModel> getFamilyByDealerId(String dealerId) {
-        return familyRepository.findByUserCre_dealerId(dealerId);
+        return familyRepository.findByCre_codCre(dealerId);
     }
 
     @Override

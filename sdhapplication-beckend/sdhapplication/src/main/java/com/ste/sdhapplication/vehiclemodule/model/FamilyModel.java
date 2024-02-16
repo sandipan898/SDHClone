@@ -1,5 +1,6 @@
 package com.ste.sdhapplication.vehiclemodule.model;
 
+import com.ste.sdhapplication.cremodule.model.CreModel;
 import com.ste.sdhapplication.usermodule.model.UserModel;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,5 +20,7 @@ public class FamilyModel {
     @Column(unique = true, nullable = false)
     private String code;
     @ManyToOne
-    private UserModel userCre;
+    private UserModel user;
+    @ManyToOne
+    private CreModel cre;
 }

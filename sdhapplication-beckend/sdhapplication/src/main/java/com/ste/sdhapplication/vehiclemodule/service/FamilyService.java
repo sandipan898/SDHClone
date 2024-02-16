@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface FamilyService {
     List<FamilyModel> getAllFamily();
+    List<FamilyModel> getFamilyByUserId(String userId);
     List<FamilyModel> getFamilyByDealerId(String dealerId);
     FamilyModel getFamilyByCode(String familyCode);
     HashMap<String, String> createFamily(FamilyModel familyModel);
