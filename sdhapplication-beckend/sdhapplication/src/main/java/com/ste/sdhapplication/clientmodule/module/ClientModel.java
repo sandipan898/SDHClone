@@ -20,6 +20,7 @@ public class ClientModel {
     private Long clientId;
     private String type;
     private LocalDate creationDate;
+    private String initial;
     private String firstName;
     private String lastName;
     private String email;
