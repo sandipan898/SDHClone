@@ -19,6 +19,8 @@ public class VersionModel {
     @Id
     @Column(unique = true, nullable = false)
     private String code;
+
+    private String versionName;
     @ManyToOne
     private FamilyModel family;
     @ManyToOne

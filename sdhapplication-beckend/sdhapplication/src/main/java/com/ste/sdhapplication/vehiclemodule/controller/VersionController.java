@@ -22,37 +22,37 @@ public class VersionController {
 
     @GetMapping("/")
     public List<VersionModel> list() {
-        logger.info("Accessing list() -> GET : api/v1/car/");
+        logger.info("Accessing list() -> GET : api/v1/version/");
         return versionService.getAllCars();
     }
 
     @GetMapping("/{versionCode}")
     public VersionModel getById(@PathVariable String versionCode) {
-        logger.info("Accessing getById() -> GET : api/v1/car/{versionCode}");
+        logger.info("Accessing getById() -> GET : api/v1/version/{versionCode}");
         return versionService.getCarByVersionCode(versionCode);
     }
 
     @GetMapping("/by_family/{familyCode}")
     public List<VersionModel> getByFamilyCode(@PathVariable String familyCode) {
-        logger.info("Accessing getByFamilyCode() -> GET : api/v1/car/by_family/{familyCode}");
+        logger.info("Accessing getByFamilyCode() -> GET : api/v1/version/by_family/{familyCode}");
         return versionService.getAllCarsByFamily(familyCode);
     }
 
     @GetMapping("/by_type/{carType}")
     public List<VersionModel> getByType(@PathVariable String carType) {
-        logger.info("Accessing getByType() -> GET : api/v1/car/by_type/{carType}");
+        logger.info("Accessing getByType() -> GET : api/v1/version/by_type/{carType}");
         return versionService.getAllVersionsByType(carType);
     }
 
     @PostMapping("/")
     public HashMap<String, String> create(@RequestBody final VersionModel versionModel) {
-        logger.info("Accessing create() -> POST : api/v1/car/");
+        logger.info("Accessing create() -> POST : api/v1/version/");
         return versionService.createCar(versionModel);
     }
 
     @PutMapping("/{versionCode}")
     public HashMap<String, String> update(@PathVariable String versionCode, @RequestBody final VersionModel versionModel) {
-        logger.info("Accessing update() -> PUT : api/v1/car/{versionCode}");
+        logger.info("Accessing update() -> PUT : api/v1/version/{versionCode}");
         return versionService.updateCar(versionCode, versionModel);
     }
 

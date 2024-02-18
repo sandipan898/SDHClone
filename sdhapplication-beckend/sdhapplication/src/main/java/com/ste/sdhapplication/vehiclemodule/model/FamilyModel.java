@@ -19,6 +19,11 @@ public class FamilyModel {
     @Id
     @Column(unique = true, nullable = false)
     private String code;
+
+    private String familyName;
+
+    private String familyType;
+
     @ManyToOne
     private UserModel user;
     @ManyToOne
