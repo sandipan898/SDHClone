@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VersionSearch = ({ setVersionSearchTerm }) => {
+const VersionSearch = ({ handleVersionSearchChange, versionSearchTerm }) => {
     return (
         <div className='md:flex md:flex-row md:justify-center p-4 sm:flex-col border-b border-gray-200'>
             <div className="md:mx-5 w-full">
@@ -11,7 +11,7 @@ const VersionSearch = ({ setVersionSearchTerm }) => {
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                         </svg>
                     </span>
-                    <input onChange={(e) => setVersionSearchTerm(e.target.value)} id="versionSearch" className="bg-white border w-4/5 xs:w-full border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                    <input value={versionSearchTerm} onChange={(e) => handleVersionSearchChange(e)} id="versionSearch" className="bg-white border w-4/5 xs:w-full border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 </div>
             </div>
         </div>
