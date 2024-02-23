@@ -17,6 +17,7 @@ const ClientProfilePage = ({ params }) => {
 
   useEffect(() => {
     fetchClient(clientId);
+    localStorage.setItem('clientId', clientId);
   }, [])
 
   return (
