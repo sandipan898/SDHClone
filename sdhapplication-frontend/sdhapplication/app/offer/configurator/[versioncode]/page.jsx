@@ -1,6 +1,6 @@
 "use client";
 
-import Configurator from '@components/offer/Configurator';
+import Configurator from '@components/offer/configurator/Configurator';
 import { getVersionByCode } from '@services/VehicleServices';
 import React, { useEffect, useState } from 'react'
 

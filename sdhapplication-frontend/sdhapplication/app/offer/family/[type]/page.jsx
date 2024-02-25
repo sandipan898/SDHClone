@@ -1,6 +1,6 @@
 "use client";
 
-import FamilyList from '@components/vehicle/FamilyList';
+import FamilyList from '@components/vehicle/family/FamilyList';
 import { getFamilyByDealer } from '@services/VehicleServices';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'

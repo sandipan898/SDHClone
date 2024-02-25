@@ -1,7 +1,7 @@
 "use client";
 
-import VersionList from '@components/vehicle/VersionList';
-import VersionSearch from '@components/vehicle/VersionSearch';
+import VersionList from '@components/vehicle/version/VersionList';
+import VersionSearch from '@components/vehicle/version/VersionSearch';
 import { getVersionByFamilyCode } from '@services/VehicleServices';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
