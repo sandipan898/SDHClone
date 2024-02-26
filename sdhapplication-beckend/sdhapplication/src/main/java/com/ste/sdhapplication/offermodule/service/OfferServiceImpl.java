@@ -30,6 +30,11 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
+    public List<OfferModel> getAllOffersByDealer(String userId) {
+        return offerRepository.findByCre_codCre(userId);
+    }
+
+    @Override
     public OfferModel getOfferById(long offerId) {
         return offerRepository.findById(offerId).orElse(new OfferModel());
     }

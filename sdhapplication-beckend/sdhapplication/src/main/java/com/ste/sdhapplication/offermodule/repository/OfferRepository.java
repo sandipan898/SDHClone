@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface OfferRepository extends JpaRepository<OfferModel, Long> {
     List<OfferModel> findByUser_id(String userId);
+    List<OfferModel> findByCre_codCre(String userId);
     List<OfferModel> findByClient_clientId(long clientId);
 }

@@ -1,8 +1,7 @@
-package com.ste.sdhapplication.personalization.service;
+package com.ste.sdhapplication.personalizationmodule.service;
 
-import com.ste.sdhapplication.parmodule.model.ParModel;
-import com.ste.sdhapplication.personalization.model.PersModel;
-import com.ste.sdhapplication.personalization.repository.PersRepository;
+import com.ste.sdhapplication.personalizationmodule.model.PersModel;
+import com.ste.sdhapplication.personalizationmodule.repository.PersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +36,7 @@ public class PersServiceImpl implements PersService {
     }
 
     @Override
-    public HashMap<String, String> createParameter(PersModel persModel) {
+    public HashMap<String, String> createPersonalization(PersModel persModel) {
         var createPersMap = new HashMap<String, String>();
         try {
             if (persRepository.findById(persModel.getId()).isPresent())
@@ -59,7 +58,7 @@ public class PersServiceImpl implements PersService {
     }
 
     @Override
-    public HashMap<String, String> updateParameter(PersModel persModel, long id) {
+    public HashMap<String, String> updatePersonalization(PersModel persModel, long id) {
         var updatePersMap = new HashMap<String, String>();
         persModel.setId(id);
         try {
@@ -80,7 +79,7 @@ public class PersServiceImpl implements PersService {
     }
 
     @Override
-    public HashMap<String, String> deleteParameter(long id) {
+    public HashMap<String, String> deletePersonalization(long id) {
         var deletePersMap = new HashMap<String, String>();
         try {
             if(persRepository.findById(id).isEmpty())

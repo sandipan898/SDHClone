@@ -1,6 +1,6 @@
-package com.ste.sdhapplication.personalization.repository;
+package com.ste.sdhapplication.personalizationmodule.repository;
 
-import com.ste.sdhapplication.personalization.model.PersModel;
+import com.ste.sdhapplication.personalizationmodule.model.PersModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

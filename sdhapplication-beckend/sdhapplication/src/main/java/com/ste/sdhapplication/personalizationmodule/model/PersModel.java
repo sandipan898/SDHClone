@@ -1,4 +1,4 @@
-package com.ste.sdhapplication.personalization.model;
+package com.ste.sdhapplication.personalizationmodule.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

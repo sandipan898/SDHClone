@@ -46,6 +46,12 @@ public class OfferController {
         return offerService.getAllOffersByClient(clientId);
     }
 
+    @GetMapping("/by_dealer/{code}")
+    public List<OfferModel> getByDealerCode(@PathVariable String code) {
+        logger.info("Accessing getByDealerCode() -> GET : api/v1/offer/by_dealer/{code}");
+        return offerService.getAllOffersByDealer(code);
+    }
+
     @PostMapping("/")
     public HashMap<String, String> create(@RequestBody final OfferModel offerModel) {
         logger.info("Accessing create() -> POST : api/v1/offer/");
