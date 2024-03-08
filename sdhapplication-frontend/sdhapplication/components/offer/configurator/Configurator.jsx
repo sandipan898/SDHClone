@@ -2,7 +2,8 @@ import React from 'react'
 import Accordians from './AccordianList'
 import AccordianList from './AccordianList'
 
-const Configurator = ({ version }) => {
+const Configurator = ({ version, parameters }) => {
+    console.log("Configurator", parameters);
     return (
         <div className='border-b border-gray-200'>
             <div className='md:flex md:flex-row md:justify-center p-4 sm:flex-col'>
@@ -44,7 +45,7 @@ const Configurator = ({ version }) => {
                 </ul>
             </div>
 
-            <AccordianList />
+            <AccordianList parameters={parameters} />
             
         </div>
     )
