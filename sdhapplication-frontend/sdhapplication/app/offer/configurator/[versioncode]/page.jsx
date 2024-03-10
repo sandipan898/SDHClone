@@ -11,6 +11,7 @@ const ConfiguratorPage = ({ params }) => {
     const versioncode = params.versioncode;
     const [clientId, setClientId] = useState(null);
     const [parameters, setParameters] = useState({});
+    const [persData, setPersData] = useState({})
 
     const [version, setVersion] = useState({})
 
@@ -39,6 +40,12 @@ const ConfiguratorPage = ({ params }) => {
         console.log("fetchParameters:", parameters);
     }
 
+    const handlePersOnChange = (e) => {
+        setPersData(persData => ({
+            ...persData, [e.target.name]: e.target.value
+        }))
+    }
+
     useEffect(() => {
         fetchVersion();
         const clientId = localStorage?.getItem('clientId');
@@ -46,12 +53,10 @@ const ConfiguratorPage = ({ params }) => {
         fetchParameters();
     }, [])
 
-
-
     return (
         <div className='md:m-5 sm:my-5'>
             <div className="border border-gray-200 rounded-lg shadow">
-                {clientId ? <Configurator version={version} parameters={parameters} /> : <ConfirmationModal />}
+                {clientId ? <Configurator version={version} parameters={parameters} persData={persData} handlePersOnChange={handlePersOnChange} /> : <ConfirmationModal />}
             </div>
         </div>
     )
