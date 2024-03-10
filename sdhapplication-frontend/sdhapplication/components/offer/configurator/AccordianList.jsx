@@ -6,12 +6,12 @@ import Personalization from '../personalization/Personalization';
 import Discount from '../discount/Discount';
 import Transformation from '../transformation/Transformation';
 
-const AccordianList = ({ parameters }) => {
+const AccordianList = ({ parameters, persData, handlePersOnChange }) => {
   console.log("AccordianList", parameters);
 
   const cmponentList = [{
     title: 'Personalization',
-    content: <Personalization />,
+    content: <Personalization persData={persData} handlePersOnChange={handlePersOnChange} />,
     visible: parameters ? parameters['NRM_PERS']?.value === '1' : false
   }, {
     title: 'Transformation',
@@ -28,8 +28,8 @@ const AccordianList = ({ parameters }) => {
       {cmponentList && cmponentList.map((component, key) => (
         component.visible ? (
             <Accordion.Panel key={key}>
-              <Accordion.Title>{component.title}</Accordion.Title>
-              <Accordion.Content>
+              <Accordion.Title className='bg-gray-700 text-white hover:text-gray-900 hover:bg-gray-300 transition-all'>{component.title}</Accordion.Title>
+              <Accordion.Content className='bg-gray-100'>
                 {component.content}
               </Accordion.Content>
             </Accordion.Panel>

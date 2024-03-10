@@ -1,8 +1,10 @@
 import React from 'react'
 import Accordians from './AccordianList'
 import AccordianList from './AccordianList'
+import PriceBox from './PriceBox';
+import PriceBoxes from './PriceBoxes';
 
-const Configurator = ({ version, parameters }) => {
+const Configurator = ({ version, parameters, persData, handlePersOnChange }) => {
     console.log("Configurator", parameters);
     return (
         <div className='border-b border-gray-200'>
@@ -45,8 +47,8 @@ const Configurator = ({ version, parameters }) => {
                 </ul>
             </div>
 
-            <AccordianList parameters={parameters} />
-            
+            <AccordianList parameters={parameters} persData={persData} handlePersOnChange={handlePersOnChange} />
+            <PriceBoxes persData={persData} handlePersOnChange={handlePersOnChange} />
         </div>
     )
 }
