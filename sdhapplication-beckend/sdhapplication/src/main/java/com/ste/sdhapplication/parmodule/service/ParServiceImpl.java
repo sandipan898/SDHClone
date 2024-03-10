@@ -2,14 +2,11 @@ package com.ste.sdhapplication.parmodule.service;
 
 import com.ste.sdhapplication.parmodule.model.ParModel;
 import com.ste.sdhapplication.parmodule.repository.ParRepository;
-import com.ste.sdhapplication.usermodule.model.UserModel;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ParServiceImpl implements ParService {

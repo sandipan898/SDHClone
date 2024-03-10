@@ -21,5 +21,5 @@ public class PersModel {
 
     private BigDecimal minPrice;
     private String description;
-    private BigDecimal maxPrice;
+    private BigDecimal maxPrice;       
 }
