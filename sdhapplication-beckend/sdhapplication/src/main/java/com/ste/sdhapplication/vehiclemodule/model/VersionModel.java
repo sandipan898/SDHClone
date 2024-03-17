@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.lang.NonNull;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -31,4 +32,5 @@ public class VersionModel {
     private List<String> optionList;
     private List<String> colorList;
     private List<String> trimList;
+    private BigDecimal basePrice;
 }
