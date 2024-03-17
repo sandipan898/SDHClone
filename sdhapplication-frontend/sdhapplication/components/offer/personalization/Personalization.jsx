@@ -19,7 +19,7 @@ const Personalization = ({ persData, handlePersOnChange }) => {
                         <div className="md:mx-5 w-full">
                             <div className="md:flex my-2">
                                 <label for="persPrice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Personalization Price</label>
-                                <input type="text" name="persPrice" id="persPrice" class='bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500' value={persData?.price} placeholder={`Enter Price here`} onChange={handlePersOnChange} />
+                                <input type="text" name="persPrice" id="persPrice" class='bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500' value={persData?.price} placeholder={`Enter Price here`} onBlur={handlePersOnChange} />
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ const Personalization = ({ persData, handlePersOnChange }) => {
                         <div className="md:mx-5 md:w-2/5 xs:w-full">
                             <div className="md:flex">
                                 <label for="persLeadtime" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Personalization Leadtime</label>
-                                <input type="text" name="persLeadtime" id="persLeadtime" class='bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500' value={persData?.leadtime} placeholder={`Leadtime will appear here`} />
+                                <input type="text" name="persLeadtime" id="persLeadtime" class='bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500' value={persData?.leadtime} placeholder={`Leadtime will appear here`} disabled />
                             </div>
                         </div>
                     </div>
