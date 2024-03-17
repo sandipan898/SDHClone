@@ -32,6 +32,6 @@ public class OfferModel {
     private String option;
     private String colorPrice;
     private String trimPrice;
-    private String totalOptionPrice;
+    private String optionPrice;
     private double totalPrice;
 }
